@@ -15,6 +15,7 @@ include "sessao.php";
     <a href="listar.php">Bicicletas</a>
     <a href="cadastrar_bicicleta.php">Cadastrar bicicleta</a>
     <a href="login.php">Entrar</a>
+    <a href="logout.php">Sair</a>
 
     <?php if (isset($_SESSION['usuario_nome'])) { ?>
         <span class="logado">Logado: <?php echo $_SESSION['usuario_nome']; ?></span>

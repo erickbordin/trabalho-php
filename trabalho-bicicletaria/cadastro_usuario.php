@@ -13,6 +13,7 @@
     <a href="listar.php">Bicicletas</a>
     <a href="cadastrar_bicicleta.php">Cadastrar bicicleta</a>
     <a href="login.php">Entrar</a>
+    <a href="logout.php">Sair</a>
 
     <?php if (isset($_SESSION['usuario_nome'])) { ?>
         <span class="logado">Logado: <?php echo $_SESSION['usuario_nome']; ?></span>
@@ -26,10 +27,6 @@
 
     <?php if (isset($_GET['erro'])) { ?>
         <p class="erro">Este e-mail já está cadastrado.</p>
-    <?php } ?>
-
-    <?php if (isset($_GET['logado'])) { ?>
-        <p class="erro">Você precisa estar logado para acessar essa página.</p>
     <?php } ?>
 
     <form action="salvar_usuario.php" method="POST">

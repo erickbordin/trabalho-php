@@ -13,6 +13,7 @@
     <a href="listar.php">Bicicletas</a>
     <a href="cadastrar_bicicleta.php">Cadastrar bicicleta</a>
     <a href="login.php">Entrar</a>
+    <a href="logout.php">Sair</a>
 
     <?php if (isset($_SESSION['usuario_nome'])) { ?>
         <span class="logado">Logado: <?php echo $_SESSION['usuario_nome']; ?></span>
@@ -23,6 +24,10 @@
 
 <div class="conteudo">
     <h1>Entrar</h1>
+
+    <?php if (isset($_GET['logado'])) { ?>
+        <p class="erro">Você precisa estar logado para acessar essa página.</p>
+    <?php } ?>
 
     <?php if (isset($_GET['cadastrado'])) { ?>
         <p class="sucesso">Cadastro realizado! Agora faça o login.</p>
