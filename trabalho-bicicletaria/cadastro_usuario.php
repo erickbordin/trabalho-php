@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,6 +13,12 @@
     <a href="listar.php">Bicicletas</a>
     <a href="cadastrar_bicicleta.php">Cadastrar bicicleta</a>
     <a href="login.php">Entrar</a>
+
+    <?php if (isset($_SESSION['usuario_nome'])) { ?>
+        <span class="logado">Logado: <?php echo $_SESSION['usuario_nome']; ?></span>
+    <?php } else { ?>
+        <span class="deslogado">Você não está logado</span>
+    <?php } ?>
 </div>
 
 <div class="conteudo">

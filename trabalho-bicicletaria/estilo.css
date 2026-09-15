@@ -8,12 +8,29 @@ body {
 .topo {
     background-color: #1f3b57;
     padding: 15px 30px;
+    display: flex;
+    align-items: center;
 }
 
 .topo a {
     color: #ffffff;
     text-decoration: none;
     margin-right: 20px;
+}
+
+/* margin-left: auto empurra o aviso para o canto direito */
+
+.logado, .deslogado {
+    margin-left: auto;
+    font-size: 14px;
+}
+
+.logado {
+    color: #9fd0a8;
+}
+
+.deslogado {
+    color: #f0b5bb;
 }
 
 .conteudo {

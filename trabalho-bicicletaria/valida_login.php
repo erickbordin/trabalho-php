@@ -12,7 +12,8 @@ if (mysqli_num_rows($resultado) == 0) {
     $usuario = mysqli_fetch_assoc($resultado);
 
     if (password_verify($_POST['senha'], $usuario['senha'])) {
-        $_SESSION['usuario_id'] = $usuario['id'];
+        $_SESSION['usuario_id']   = $usuario['id'];
+        $_SESSION['usuario_nome'] = $usuario['nome'];
         header("Location: listar.php");
     } else {
         header("Location: login.php?erro=1");
