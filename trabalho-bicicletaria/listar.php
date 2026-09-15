@@ -1,4 +1,5 @@
 <?php
+include "sessao.php";
 include "conexao.php";
 
 $resultado = mysqli_query($conexao, "SELECT * FROM bicicletas ORDER BY id DESC");

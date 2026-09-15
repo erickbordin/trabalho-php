@@ -21,6 +21,10 @@
         <p class="erro">Este e-mail já está cadastrado.</p>
     <?php } ?>
 
+    <?php if (isset($_GET['logado'])) { ?>
+        <p class="erro">Você precisa estar logado para acessar essa página.</p>
+    <?php } ?>
+
     <form action="salvar_usuario.php" method="POST">
         <label>Nome</label>
         <input type="text" name="nome" maxlength="80" required>

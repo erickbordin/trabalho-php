@@ -1,11 +1,6 @@
 <?php
-session_start();
+include "sessao.php";
 include "conexao.php";
-
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.php");
-    exit;
-}
 
 $modelo = mysqli_real_escape_string($conexao, $_POST['modelo']);
 $marca  = mysqli_real_escape_string($conexao, $_POST['marca']);

@@ -1,10 +1,5 @@
 <?php
-session_start();
-
-if (!isset($_SESSION['usuario_id'])) {
-    header("Location: login.php");
-    exit;
-}
+include "sessao.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
