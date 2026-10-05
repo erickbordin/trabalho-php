@@ -1,10 +1,13 @@
 CREATE DATABASE IF NOT EXISTS bicicletaria;
 
+USE bicicletaria;
+
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(80),
     senha VARCHAR(255),
-    email VARCHAR(255)
+    email VARCHAR(255),
+    foto VARCHAR(255)
 );
 
 CREATE TABLE bicicletas (

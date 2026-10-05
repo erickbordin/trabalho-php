@@ -18,8 +18,6 @@ body {
     margin-right: 20px;
 }
 
-/* margin-left: auto empurra o aviso para o canto direito */
-
 .logado, .deslogado {
     margin-left: auto;
     font-size: 14px;
@@ -42,8 +40,6 @@ body {
 h1 {
     color: #1f3b57;
 }
-
-/* Formulários */
 
 form {
     background-color: #ffffff;
@@ -79,8 +75,6 @@ button {
     cursor: pointer;
 }
 
-/* Mensagens */
-
 .erro {
     color: #8a1c26;
     background-color: #f8d7da;
@@ -96,8 +90,6 @@ button {
     border-radius: 4px;
     max-width: 400px;
 }
-
-/* Listagem */
 
 .card {
     background-color: #ffffff;
@@ -125,4 +117,69 @@ button {
     color: #1d6b32;
     font-weight: bold;
     font-size: 18px;
+}
+
+.logado {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 20px;
+}
+
+.foto-usuario {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.topo .sair {
+    margin-right: 0;
+}
+
+.foto-atual {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+}
+
+.acoes a,
+.acoes button {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    margin: 0;
+    border-radius: 4px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.acoes form {
+    flex: 1;
+    display: flex;
+    max-width: none;
+    padding: 0;
+    background: none;
+}
+
+.editar {
+    background-color: #1f3b57;
+}
+
+.apagar {
+    background-color: #8a1c26;
+}
+
+.rodape {
+    text-align: center;
+    padding: 20px;
+    color: #6b7686;
+    font-size: 13px;
 }
