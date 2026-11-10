@@ -1,21 +1,30 @@
 <?php
-include "../includes/sessao.php";
-include "../includes/validacao.php";
+session_start();
 include "../config/conexao.php";
 include "../services/bicicleta_service.php";
 include "../services/upload_service.php";
 
-validarEnvioFormulario("../views/listar.php");
+$dados = json_decode(file_get_contents("php://input"));
 
-$id = (int) lerCampo("id");
+if (!isset($_SESSION['usuario_nome'])) {
+    echo "voce precisa estar logado para apagar uma bicicleta.";
+    exit;
+}
+
+if (!isset($dados->token) || empty($_SESSION['token']) || !hash_equals($_SESSION['token'], $dados->token)) {
+    echo "a pagina expirou. atualize a pagina e tente novamente.";
+    exit;
+}
+
+$id = (int) $dados->id;
 $bicicleta = buscarBicicletaPorId($conexao, $id);
 
 if (!$bicicleta) {
-    voltarComErro("Bicicleta não encontrada.", "../views/listar.php");
+    echo "bicicleta nao encontrada.";
+    exit;
 }
 
 apagarBicicleta($conexao, $id);
 apagarImagem($bicicleta['imagem']);
 
-header("Location: ../views/listar.php");
-exit;
+echo "a blicicleta foi apagada com sucesso.";
